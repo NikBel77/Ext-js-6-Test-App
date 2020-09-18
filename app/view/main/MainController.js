@@ -9,8 +9,25 @@ Ext.define('TestApp.view.main.MainController', {
 
     alias: 'controller.main',
 
+    onLogout: function() {
+        this.getView().destroy();
+
+        Ext.create({
+            xtype: 'login'
+        })
+    },
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    },
+
+    onGoods: function() {
+        let list = Ext.create({
+            xtype: 'mainlist'
+        });
+        
+        this.getView().add(list);
+        this.getView().updateLayout();
     },
 
     onConfirm: function (choice) {
