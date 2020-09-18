@@ -6,22 +6,20 @@ Ext.define('TestApp.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'TestApp.store.Personnel'
+        'TestApp.store.Goods'
     ],
 
-    title: 'Personnel',
+    title: 'Goods',
 
     store: {
-        type: 'personnel'
+        type: 'goods'
     },
 
     columns: [
         { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
     ],
 
     listeners: {
         select: 'onItemSelected'
-    }
+    },
 });
